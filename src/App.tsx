@@ -36,12 +36,11 @@ function App() {
       return;
     }
 
-    // Send email using EmailJS
     emailjs.sendForm(
-      'YOUR_SERVICE_ID', // You'll need to replace this
-      'YOUR_TEMPLATE_ID', // You'll need to replace this
+      'YOUR_SERVICE_ID',
+      'YOUR_TEMPLATE_ID',
       form,
-      'YOUR_PUBLIC_KEY' // You'll need to replace this
+      'YOUR_PUBLIC_KEY'
     )
     .then((result) => {
       alert("Thank you for your message! I'll get back to you soon.");
@@ -60,7 +59,6 @@ function App() {
 
   return (
     <div className="min-h-screen">
-      {/* Header */}
       <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isHeaderScrolled ? 'bg-white/90 backdrop-blur-md shadow-lg' : ''
       }`}>
@@ -101,7 +99,6 @@ function App() {
         </nav>
       </header>
 
-      {/* Hero Section */}
       <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-800"></div>
         <div className="absolute inset-0 bg-black/20"></div>
@@ -168,7 +165,6 @@ function App() {
         </div>
       </section>
 
-      {/* Tagline Section */}
       <section className="py-16 bg-gradient-to-r from-gray-900 to-gray-800">
         <div className="container mx-auto px-6">
           <div className="text-center">
@@ -179,7 +175,6 @@ function App() {
         </div>
       </section>
 
-      {/* About Section */}
       <section id="about" className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
@@ -238,7 +233,6 @@ function App() {
         </div>
       </section>
 
-      {/* Services Section */}
       <section id="services" className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
@@ -277,7 +271,6 @@ function App() {
         </div>
       </section>
 
-      {/* Portfolio Section */}
       <section id="portfolio" className="py-20 bg-gray-900">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
@@ -330,7 +323,6 @@ function App() {
         </div>
       </section>
 
-      {/* Contact Section */}
       <section id="contact" className="py-20 bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-800">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
@@ -402,7 +394,6 @@ function App() {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="bg-gray-900 py-12">
         <div className="container mx-auto px-6">
           <div className="text-center">
