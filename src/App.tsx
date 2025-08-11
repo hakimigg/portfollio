@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Menu, X, Monitor, Zap, Palette, ShoppingBag, Smartphone, Building, Mail, Phone, MapPin, Instagram } from 'lucide-react';
+import { Menu, X, Monitor, Zap, Palette, Smartphone, Mail, Phone, MapPin, Instagram } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 
 function App() {
@@ -42,7 +42,7 @@ function App() {
       form,
       'YOUR_PUBLIC_KEY'
     )
-    .then((result) => {
+    .then(() => {
       alert("Thank you for your message! I'll get back to you soon.");
       form.reset();
     }, (error) => {
@@ -282,42 +282,50 @@ function App() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                icon: ShoppingBag,
-                title: 'E-commerce Website',
-                description: 'Modern online store with seamless shopping experience',
-                tags: ['React', 'Node.js']
+                title: 'Premium Electronics Store',
+                url: 'https://hakimigg.github.io/demo/',
+                description: 'Modern electronics storefront with clean product presentation',
+                tags: ['HTML/CSS', 'JavaScript'],
+                coverClass: 'from-slate-800 to-blue-700'
               },
               {
-                icon: Smartphone,
-                title: 'Mobile App',
-                description: 'Cross-platform mobile application',
-                tags: ['React Native', 'Firebase']
+                title: 'Brewed Bliss Coffee Shop',
+                url: 'https://hakimigg.github.io/coffee/',
+                description: 'Warm and inviting coffee shop landing experience',
+                tags: ['HTML/CSS'],
+                coverClass: 'from-amber-700 to-stone-800'
               },
               {
-                icon: Building,
-                title: 'Corporate Website',
-                description: 'Professional business website with modern design',
-                tags: ['HTML/CSS', 'JavaScript']
+                title: 'Artificial Intelligence - Deep Dive',
+                url: 'https://hakimigg.github.io/project1/',
+                description: 'Educational single-page about AI with strong typography',
+                tags: ['HTML/CSS'],
+                coverClass: 'from-indigo-700 to-purple-800'
               }
-            ].map(({ icon: Icon, title, description, tags }) => (
-              <div key={title} className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group hover:scale-105">
-                <div className="h-48 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
-                  <Icon className="w-16 h-16 text-white" />
+            ].map(({ title, url, description, tags, coverClass }) => (
+              <a
+                key={title}
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group hover:scale-105 block"
+              >
+                <div className={`h-48 bg-gradient-to-br ${coverClass} flex items-center justify-center`}> 
+                  <span className="text-white text-2xl font-bold text-center px-4">{title}</span>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">{title}</h3>
                   <p className="text-gray-600 mb-4">{description}</p>
-                  <div className="flex space-x-2">
+                  <div className="flex flex-wrap gap-2">
                     {tags.map((tag) => (
                       <span key={tag} className={`px-3 py-1 rounded-full text-sm ${
-                        tag === 'React' || tag === 'HTML/CSS' ? 'bg-blue-100 text-blue-600' : 'bg-purple-100 text-purple-600'
+                        tag === 'HTML/CSS' ? 'bg-blue-100 text-blue-600' : 'bg-purple-100 text-purple-600'
                       }`}>
                         {tag}
                       </span>
                     ))}
                   </div>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
